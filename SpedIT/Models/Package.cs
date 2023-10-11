@@ -19,15 +19,25 @@ namespace SpedIT_Domain.Models
 		[Required]
 		public DateTime SendingTime { get; set; }
 
-		public DateOnly PlannedDeliveryTime { get; set; }
+		public DateTime PlannedDeliveryTime { get; set; }
 
-		public Package(PackageState state, string address, string comment, DateTime sendingTime, DateOnly plannedDeliveryTime)
+		public Package(PackageState state, string address, string comment, DateTime sendingTime, DateTime plannedDeliveryTime)
 		{
 			State = state;
 			Address = address;
 			Comment = comment;
 			SendingTime = sendingTime;
 			PlannedDeliveryTime = plannedDeliveryTime;
+		}
+
+		public Package()
+		{
+			Id = 0;
+			State = PackageState.ToBePickup;
+			Address = string.Empty;
+			Comment = string.Empty;
+			SendingTime = DateTime.MinValue;
+			PlannedDeliveryTime = DateTime.MinValue;
 		}
 	}
 }

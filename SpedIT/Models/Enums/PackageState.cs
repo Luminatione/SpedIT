@@ -1,4 +1,6 @@
-﻿namespace SpedIT_Domain.Models.Enums
+﻿using System.ComponentModel;
+
+namespace SpedIT_Domain.Models.Enums
 {
     public enum PackageState
     {

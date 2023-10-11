@@ -24,7 +24,13 @@ namespace SpedIT_Domain.Models
 		public Employee Driver {  get; set; }
 
 		[Required]
-		public Vector3 Dimensions { get; set; }
+		public double XDimensions { get; set; }
+
+		[Required]
+		public double YDimensions { get; set; }
+
+		[Required]
+		public double ZDimensions { get; set; }
 
 		public float Height { get; set; }
 

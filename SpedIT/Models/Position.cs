@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace SpedIT.Models
 {
@@ -10,12 +11,20 @@ namespace SpedIT.Models
 		[Required]
 		public string Name { get; set; }
 
-		public decimal minimalSalary { get; set; }
+		[DisplayName("Minimal Salary")]
+		public decimal MinimalSalary { get; set; }
 
 		public Position(string name, decimal minimalSalary)
 		{
 			Name = name;
-			this.minimalSalary = minimalSalary;
+			this.MinimalSalary = minimalSalary;
+		}
+
+		public Position() 
+		{ 
+			Id = 0;
+			Name = string.Empty;
+			MinimalSalary = 0;
 		}
 	}
 }

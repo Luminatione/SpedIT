@@ -8,18 +8,13 @@ namespace SpedIT_Domain.Models
 		[Key]
 		public int Id { get; set; }
 
+		public int ComplainantId { get; set; }
 		public Employee Complainant { get; set; }
 
+		public int ContestedId { get; set; }
 		public Employee Contested {  get; set; }
 
 		[Required]
-		public string content { get; set; }
-
-		public Complain(Employee complainant, Employee contested, string content)
-		{
-			Complainant = complainant;
-			Contested = contested;
-			this.content = content;
-		}
+		public string Content { get; set; }
 	}
 }

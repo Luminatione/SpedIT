@@ -36,19 +36,5 @@ namespace SpedIT.Models
 		public string Comment {  get; set; }
 
 		public EmplymentType EmplymentType { get; set; }
-
-		public Employee(string firstName, string lastName, DateTime dateOfBirth, DateTime dateOfStartWork, Department department, decimal salary, Position position, string pESEL, string comment, EmplymentType emplymentType)
-		{
-			FirstName = firstName;
-			LastName = lastName;
-			DateOfBirth = dateOfBirth;
-			DateOfStartWork = dateOfStartWork;
-			Department = department;
-			Salary = salary;
-			Position = position;
-			PESEL = pESEL;
-			Comment = comment;
-			EmplymentType = emplymentType;
-		}
 	}
 }

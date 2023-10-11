@@ -18,5 +18,12 @@ namespace SpedIT.Models
 			Name = name;
 			Address = address;
 		}
-	}
+
+        public Department()
+        {
+			Id = 0;
+			Name = string.Empty;
+			Address = string.Empty;
+        }
+    }
 }

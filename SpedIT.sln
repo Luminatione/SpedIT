@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpedIT Domain", "SpedIT\SpedIT Domain.csproj", "{9A3B3EDC-82E4-466D-99A7-10AABD05330D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpedIT Data", "SpedIT Data\SpedIT Data.csproj", "{50B77704-5ED4-46F0-A630-9683144B22C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpedIT Data", "SpedIT Data\SpedIT Data.csproj", "{50B77704-5ED4-46F0-A630-9683144B22C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpedIT Interface", "SpedIT Interface\SpedIT Interface.csproj", "{E113D041-662A-48FA-A31B-75F1CB7987BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{50B77704-5ED4-46F0-A630-9683144B22C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50B77704-5ED4-46F0-A630-9683144B22C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50B77704-5ED4-46F0-A630-9683144B22C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E113D041-662A-48FA-A31B-75F1CB7987BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E113D041-662A-48FA-A31B-75F1CB7987BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E113D041-662A-48FA-A31B-75F1CB7987BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E113D041-662A-48FA-A31B-75F1CB7987BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
