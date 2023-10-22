@@ -5,16 +5,24 @@ namespace SpedIT_Domain.Models
 {
 	public class Complain
 	{
-		[Key]
+        [Key]
 		public int Id { get; set; }
 
-		public int ComplainantId { get; set; }
-		public Employee Complainant { get; set; }
+		public int? ComplainantId { get; set; }
+		public Employee? Complainant { get; set; }
 
-		public int ContestedId { get; set; }
-		public Employee Contested {  get; set; }
+		public int? ContestedId { get; set; }
+		public Employee? Contested {  get; set; }
 
 		[Required]
 		public string Content { get; set; }
-	}
+
+        public Complain()
+        {
+			Id = 0;
+			ComplainantId = 0;
+			ContestedId = 0;
+			Content = string.Empty;
+        }
+    }
 }

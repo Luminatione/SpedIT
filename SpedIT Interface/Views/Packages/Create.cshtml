@@ -1,4 +1,5 @@
-﻿@model SpedIT_Domain.Models.Package
+﻿@using SpedIT_Domain.Models.Enums;
+@model SpedIT_Domain.Models.Package
 
 @{
     ViewData["Title"] = "Create";
@@ -15,7 +16,13 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="State" class="control-label"></label>
-                <select asp-for="State" class="form-control"></select>
+                <select asp-for="State" class="form-control">
+                    <option value="@PackageState.ToBePickedUp">To Be Picked Up</option>
+                    <option value="@PackageState.Waiting">Waiting</option>
+                    <option value="@PackageState.ReadyToDeliver">Ready To Deliver</option>
+                    <option value="@PackageState.InDelivery">In Delivery</option>
+                    <option value="@PackageState.Delivered">Delivered</option>
+                </select>
                 <span asp-validation-for="State" class="text-danger"></span>
             </div>
             <div class="form-group">

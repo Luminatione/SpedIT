@@ -4,10 +4,12 @@ namespace SpedIT_Domain.Repositories
 {
 	public interface IComplainRepository
 	{
-		Task<IEnumerable<Complain>> GetComplains();
+		Task<IEnumerable<Complain>> GetAllComplainsAsync();
 
-		Task<Complain> GetComplain(int id);
+		Task<Complain> GetComplainByIdAsync(int id);
 
-		Task AddComplain(Complain complain);
-	}
+		Task AddComplainAsync(Complain complain);
+        Task UpdateComplainAsync(Complain department);
+        Task DeleteComplainAsync(int id);
+    }
 }

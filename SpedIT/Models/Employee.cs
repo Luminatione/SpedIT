@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using SpedIT_Domain.Models.Enums;
+using System.ComponentModel;
 
 namespace SpedIT.Models
 {
@@ -10,31 +11,52 @@ namespace SpedIT.Models
 		public int Id { get; set; }
 
 		[Required]
+		[DisplayName("First Name")]
 		public string FirstName { get; set; }
 
 		[Required]
-		public string LastName { get; set; }
+        [DisplayName("Last Name")]
+        public string LastName { get; set; }
 
-		public DateTime DateOfBirth { get; set; }
+        [DisplayName("Date of Birth")]
+        public DateTime DateOfBirth { get; set; }
 
 		[Required]
-		public DateTime DateOfStartWork { get; set; }
+        [DisplayName("Date of Start Work")]
+        public DateTime DateOfStartWork { get; set; }
 
 		[ForeignKey(nameof(Department))]
-		public int DepartmentId { get; set; }
-		public Department Department { get; set; }
+        [DisplayName("Department")]
+        public int DepartmentId { get; set; }
+        public Department? Department { get; set; }
 
-		[Column(TypeName = "decimal(18, 2)"), Required]
-		public decimal Salary { get; set; }
+		[Required]
+		[Column(TypeName = "decimal(18, 2)")]
+        public decimal Salary { get; set; }
 
-		[ForeignKey(nameof(Position)), Required]
-		public int PositionId { get; set; }
-		public Position Position { get; set; }
+		[Required]
+		[ForeignKey(nameof(Position))]
+        [DisplayName("Position")]
+        public int PositionId { get; set; }
+		public Position? Position { get; set; }
 
 		public string PESEL {  get; set; }
 
-		public string Comment {  get; set; }
+		public string? Comment {  get; set; }
 
-		public EmplymentType EmplymentType { get; set; }
-	}
+        [DisplayName("Emplyment Type")]
+        public EmplymentType EmplymentType { get; set; }
+
+        public Employee()
+        {
+			Id = 0;
+			FirstName = string.Empty;
+			LastName = string.Empty;
+			DateOfBirth = DateTime.MinValue;
+			DateOfStartWork = DateTime.MinValue;
+			PESEL = string.Empty;
+			Comment = string.Empty;
+			EmplymentType = EmplymentType.None;
+        }
+    }
 }

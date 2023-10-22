@@ -4,7 +4,7 @@ namespace SpedIT_Domain.Models.Enums
 {
     public enum PackageState
     {
-        ToBePickup,
+        ToBePickedUp,
         Waiting,
         ReadyToDeliver,
         InDelivery,

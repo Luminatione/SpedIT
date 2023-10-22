@@ -21,7 +21,7 @@ namespace SpedIT_Data.Repositories
 
 		public async Task<IEnumerable<Employee>> GetAllEmployeesAsync()
 		{
-			return await _context.Employees.ToListAsync();
+			return await _context.Employees.Include("Position").Include("Department").ToListAsync();
 		}
 
 		public async Task<int> AddEmployeeAsync(Employee employee)

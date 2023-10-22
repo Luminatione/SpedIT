@@ -1,0 +1,58 @@
+﻿@using SpedIT.Models;
+@model SpedIT_Domain.Models.Complain
+
+@{
+    ViewData["Title"] = "Delete";
+}
+@functions
+{
+    public string GetEmployeeDisplayValue(Employee? employee)
+    {
+        if (employee == null)
+        {
+            return "Not Specified";
+        }
+        return employee.FirstName + " " + employee.LastName;
+    }
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Complain</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Complainant)
+        </dt>
+        <dd class = "col-sm-10">
+            @{
+                var displayValue = GetEmployeeDisplayValue(Model.Complainant);
+            }
+            @Html.DisplayFor(model => displayValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contested)
+        </dt>
+        <dd class = "col-sm-10">
+            @{
+                displayValue = GetEmployeeDisplayValue(Model.Contested);
+            }
+            @Html.DisplayFor(model => displayValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,54 @@
+﻿@model SpedIT_Domain.Models.Complain
+@using SpedIT.Models;
+
+@{
+    ViewData["Title"] = "Details";
+}
+@functions
+{
+    public string GetEmployeeDisplayValue(Employee? employee)
+    {
+        if (employee == null)
+        {
+            return "Not Specified";
+        }
+        return employee.FirstName + " " + employee.LastName;
+    }
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Complain</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Complainant)
+        </dt>
+        <dd class = "col-sm-10">
+            @{
+                var displayValue = GetEmployeeDisplayValue(Model.Complainant);
+            }
+            @Html.DisplayFor(model => displayValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contested)
+        </dt>
+        <dd class = "col-sm-10">
+            @{
+                displayValue = GetEmployeeDisplayValue(Model.Contested);
+            }
+            @Html.DisplayFor(model => displayValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

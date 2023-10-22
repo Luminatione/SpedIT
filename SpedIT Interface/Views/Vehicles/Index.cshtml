@@ -1,0 +1,112 @@
+﻿@model IEnumerable<SpedIT_Domain.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.XDimensions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YDimensions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZDimensions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxWeight)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistrationNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.XDimensions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YDimensions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZDimensions)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Height)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxWeight)
+                </td>
+                <td>
+                    @if (item.Packages != null && item.Packages.Any())
+                    {
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Package ID</th>
+                                    <th>State</th>
+                                    <th>Address</th>
+                                    <th>Comment</th>
+                                    <th>Sending Time</th>
+                                    <th>Planned Delivery Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var package in item.Packages)
+                                {
+                                    <tr>
+                                        <td>@package.Id</td>
+                                        <td>@package.State</td>
+                                        <td>@package.Address</td>
+                                        <td>@package.Comment</td>
+                                        <td>@package.SendingTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                        <td>@package.PlannedDeliveryTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p>No packages available for this vehicle.</p>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

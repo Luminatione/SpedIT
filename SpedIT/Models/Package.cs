@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using SpedIT_Domain.Models.Enums;
 
 namespace SpedIT_Domain.Models
 {
     public class Package
-	{
-		[Key]
-		public int Id { get; set; }
+    {
+        [Key]
+        public int Id { get; set; }
 
 		[Required]
 		public PackageState State { get; set; }
@@ -33,7 +34,7 @@ namespace SpedIT_Domain.Models
 		public Package()
 		{
 			Id = 0;
-			State = PackageState.ToBePickup;
+			State = PackageState.ToBePickedUp;
 			Address = string.Empty;
 			Comment = string.Empty;
 			SendingTime = DateTime.MinValue;

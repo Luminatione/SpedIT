@@ -13,7 +13,7 @@
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "packages",
+      "launchUrl": "Vehicles",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
